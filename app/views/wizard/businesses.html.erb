@@ -1,0 +1,58 @@
+<% title(t(".page_title")) %>
+
+<div class="govuk-width-container">
+
+    <%= link_to t("link.back"), "/wizard/" + @submission.router.previous_page(:businesses).to_s , class: "govuk-back-link ga-pageLink" %>
+
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-xl"><%= t(".page_title") %></h1>
+
+                <%= t(".body_html") %>
+
+                <%= form_for @submission, url: wizard_businesses_path, method: :post do |f| %>
+                    <%= f.govuk_error_summary %>
+                <% end %>
+
+                <% if @submission.businesses.count > 0 %>
+
+                    <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m"><%= t(".business_details") %></caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header" width="20%"><%= t(".business_name") %></th>
+                            <th scope="col" class="govuk-table__header" width="40%"><%= t(".business_address") %></th>
+                            <th scope="col" class="govuk-table__header" width="20%"><%= t(".business_postcode") %></th>
+                            <th scope="col" class="govuk-table__header" width="20%">&nbsp;</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <% @submission.businesses.each do |b| %>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header"><%= b.business_name %></th>
+                            <td class="govuk-table__cell"><%= b.business_address.gsub("\r\n",", ") %></td>
+                            <td class="govuk-table__cell"><%= b.business_postcode %></td>
+                            <td class="govuk-table__cell"><a href="./business/edit/?business_id=<%= b.id %>"><%= t('.change') %></a>&nbsp;&nbsp;<a href="./business/remove/?business_id=<%= b.id %>"><%= t('.remove') %></a></td>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                    </table>
+
+                <% else %>
+                    <p class="govuk-body">No businesses have been added yet.</p>
+                <% end %>
+
+                <%= form_for @submission, url: wizard_business_add_path, method: :get do |f| %>
+                    <%= f.govuk_submit t(".add_business"), secondary:true %>
+                <% end %>
+
+                <%= form_for @submission, url: wizard_businesses_path, method: :post do |f| %>
+                    <%= f.govuk_submit %>
+                <% end %>
+
+            </div>
+        </div>
+    </main>
+</div>

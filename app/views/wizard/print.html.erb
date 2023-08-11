@@ -1,0 +1,80 @@
+<% title( t(".page_title", refno: @submission.reference_number) ) %>
+
+<h1 class="govuk-heading-xl"><%= t(".page_title", refno: @submission.reference_number) %></h1>
+
+<%= t(".body_html") %>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".businesses") %></dt>
+        <dd class="govuk-summary-list__value">
+            <% @submission.businesses.each do |b| %>    
+                <strong><%= b.business_name %></strong>
+                <%= !b.business_address.blank?  ? raw("<br />") + b.business_address : nil %>
+                <%= !b.business_postcode.blank? ? raw("<br />") + b.business_postcode : nil %>
+                <%= !b.business_url.blank?      ? raw("<br />") + b.business_url : nil %>
+                <%= raw("<br />") %>
+            <% end %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".what_happened") %></dt>
+        <dd class="govuk-summary-list__value">
+            <%= simple_format(@submission.what_happened) %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".evidence") %></dt>
+        <dd class="govuk-summary-list__value">
+            <% if !@submission.evidence_files.blank? %>
+                <% @submission.evidence_files.each do |ef| %>
+                    <%= ef.filename %><br />
+                <% end %>
+            <% else %>
+                <%= t(".no_evidence_files") %>
+            <% end %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".include_contact") %></dt>
+        <dd class="govuk-summary-list__value">
+            <%= t("." + @submission.include_contact) %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".contact_name") %></dt>
+        <dd class="govuk-summary-list__value">
+            <%= !@submission.contact_name.blank? ? @submission.contact_name : t(".not_provided") %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".contact_email_address") %></dt>
+        <dd class="govuk-summary-list__value">
+            <%= !@submission.contact_email_address.blank? ? @submission.contact_email_address : t(".not_provided") %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".contact_telephone_number") %></dt>
+        <dd class="govuk-summary-list__value">
+            <%= !@submission.contact_telephone_number.blank? ? @submission.contact_telephone_number : t(".not_provided") %>
+        </dd>
+    </div>
+</dl>

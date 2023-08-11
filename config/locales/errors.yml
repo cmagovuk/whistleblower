@@ -1,0 +1,53 @@
+en:
+  errors:
+    businesses:
+      no_businesses: You must add at least one business
+
+    include_contact:
+        no_option_chosen: You must choose an option
+
+    attributes:
+
+      business_name:
+        too_long: Name must be %{count} characters or fewer
+        blank: Enter a name
+
+      business_address:
+        too_long: Address must be %{count} characters or fewer
+        blank: Enter an address
+
+      business_postcode:
+        too_long: Postcode must be %{count} characters or fewer
+        blank: Enter a postcode
+        invalid: Enter a valid postcode
+
+      business_url:
+        too_long: Website must be %{count} characters or fewer
+        invalid: Enter a valid URL
+
+      what_happened:
+        too_long: What happened must be %{count} characters or fewer
+        blank: Enter what happened
+
+      contact_name:
+        too_long: Full name must be %{count} characters or fewer
+
+      contact_email_address:
+        invalid: Enter a valid email address
+        too_long: Email address must be %{count} characters or fewer
+        blank: Enter a contact email address
+
+      contact_telephone_number:
+        invalid: Enter a valid telephone number
+        too_long: Telephone number must be %{count} characters or fewer
+
+    upload:
+      file_size_error_message: "%{filename} must be smaller than %{size_limit}"
+      too_many_files_error_message: "You are limited to %{file_uploads} supporting documents"
+      file_type_error_message: "The selected file must be a DOC, DOCX, XLS, XLSX, PPT, PPTX, PDF, JPG, PNG, MP4, MOV or WMV"
+      file_unique_error_message: "The selected filename has already been added"
+      empty_file_error_message: The selected file is empty
+      no_file: Select a file to upload
+      unknown_file_format: Unknown file format - use the template spreadsheet link
+
+

@@ -1,0 +1,32 @@
+<% title(t(".page_title")) %>
+
+<div class="govuk-width-container">
+
+    <%= link_to t("link.back"), "/wizard/" + @submission.router.previous_page(:contact).to_s , class: "govuk-back-link ga-pageLink" %>
+
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+            <%= form_for @submission, url: wizard_contact_path, method: :post do |f| %>
+
+                <%= f.govuk_fieldset legend: { text: t(".page_title"),size: "xl" } do %>
+
+                    <%= t(".body_html") %>
+
+                    <%= f.govuk_error_summary %>
+
+                    <%= f.govuk_text_field :contact_name, label: { text: t(".contact_name") }, width: "one-half" %>
+                    <%= f.govuk_email_field :contact_email_address, label: { text: t(".contact_email_address") }, hint: {text: t(".contact_email_address_hint")}, width: "one-half" %>
+                    <%= f.govuk_phone_field :contact_telephone_number, label: { text: t(".contact_telephone_number") }, hint: {text: t(".contact_telephone_number_hint")}, width: "one-half" %>
+
+                <% end %>
+
+                <%= f.govuk_submit %>
+                
+            <% end %>
+
+            </div>
+        </div>
+    </main>
+</div>

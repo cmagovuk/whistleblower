@@ -1,0 +1,211 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# The following keys must be escaped otherwise they will not be retrieved by
+# the default I18n backend:
+#
+# true, false, on, off, yes, no
+#
+# Instead, surround them with single quotes.
+#
+# en:
+#   'true': 'foo'
+#
+# To learn more, please read the Rails Internationalization guide
+# available at https://guides.rubyonrails.org/i18n.html.
+
+en:
+  service: 
+    name: "CMA MWR"
+    
+  link:
+    back: Back
+
+  feedback:
+    subject: Feedback for 'CMA MWR' form
+
+  cookie_banner:
+    confirmation_message:
+      true: You've accepted analytics cookies.
+      false: You've rejected analytics cookies.
+  layouts:
+    application:
+      phase_text_html: This is a new service - your %{feedback_link} will help us to improve it.
+      cookies: Cookies
+      accessibility_link: Accessibility statement
+
+  wizard:
+    start:
+      page_title: Make a whistleblower report
+      body_html: |
+        <h2 class="govuk-heading-m">What you can report</h2>
+        <p class="govuk-body">Use this service to tell the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about" target="_blank">Competition and Markets Authority (CMA) (opens in a new tab)</a> about any suspected illegal activities or suspicious behaviour carried out by the business or organisation you are employed by or were previously employed by.</p>
+        <h2 class="govuk-heading-m">Anonymity</h2>
+        <p class="govuk-body">As part of your report, you can choose to provide contact details to us or remain anonymous.</p>
+        <p class="govuk-body govuk-inset-text">Due to the volume of submissions, the CMA can't respond directly to every report we receive, however we monitor information provided and take action where appropriate.</p>
+        <p class="govuk-body">As a result of your report, we may:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>contact you for more information (if you choose to provide contact details)</li>
+          <li>investigate and take action (for example, by launching a new CMA case)</li>
+          <li>prosecute people involved in illegal cartel behaviour</li>
+        </ul>
+        <p class="govuk-body"><a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">Find out more about whistleblowing (opens in a new tab)</a>, and what it means to be a whistleblower, including your rights and how we will protect your identity.</p>
+        <h2 class="govuk-heading-m">Information you will need to provide</h2>
+        <p class="govuk-body">You will not be able to save your submission and come back to it later, so it's important you have these ready:</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a description of the issue</li>
+          <li>supporting evidence, for example: emails, screenshots or documents</li>
+        </ul>
+      start_now: Start now
+
+    businesses:
+      page_title: Tell us about the businesses you want to report
+      body_html: |
+        <p class="govuk-body">You can add multiple businesses to your report.</p>
+      business_details: Business details
+      business_name: Name
+      business_address: Address
+      business_postcode: Postcode
+      add_business: Add business
+      
+    business_add:
+      page_title: Add business
+      business_name: Name
+      business_address: Address
+      business_postcode: Postcode
+      business_url: Website (optional)
+      business_url_hint: Enter full URL (for example, https://business.com)
+      submit: "Add business"
+      cancel: "Cancel"
+
+    business_edit:
+      page_title: Edit business
+      business_name: Name
+      business_address: Address
+      business_postcode: Postcode
+      business_url: Website (optional)
+      business_url_hint: Enter full URL (for example, https://business.com)
+      submit: "Make changes"
+      cancel: "Cancel"
+
+    what_happened:
+      page_title: Tell us what happened
+      hint_html: |
+        <p class="govuk-body">Tell us about what you know. It's important you tell us if the information you have relates to any of the below:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>sale of products</li>
+          <li>supply of services</li>
+          <li>UK markets</li>
+          <li>different businesses working together to set prices or practices</li>
+        </ul>
+        <p class="govuk-body">Try to start from the beginning and include as much information as possible.</p>
+        <p class="govuk-body">This can include conversations, emails, shared and group discussions that may not have felt right. Provide dates and any other information that would help us understand what you are reporting.</p>
+        <p class="govuk-body">Do not include personal or financial information, for example: credit card details, medical history or information about children or vulnerable people.</p>
+        <p class="govuk-body">You can upload evidence in the next step.</p>
+
+    evidence:
+      page_title: Supporting evidence
+      hint_html: |
+        <p class="govuk-body">You can add up to 5 files of supporting evidence to your report. Most file types are supported (for example, PDF, DOC, Excel, JPG, PNG) and can be up to 10MB each.</p>
+        <p class="govuk-body">You can upload any evidence that supports your report. For example:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>contracts</li>
+          <li>quotes</li>
+          <li>emails</li>
+          <li>letters</li>
+          <li>recordings</li>
+          <li>screenshots</li>
+          <li>any evidence that supports your submission</li>
+        </ul>
+        <p class="govuk-body">You will not be able to submit any further supporting evidence later. If you have more than 5 files to submit, you can email them to <a href="mailto:email@cma.gov.uk">email@cma.gov.uk</a>.</p>
+        <p class="govuk-body">We carefully protect and handle all evidence in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a> (also known as a privacy notice).</p>        
+        <p class="govuk-body">You do not need to submit evidence to report something to us.</p>
+      filename: Filename
+      filesize: File size
+      action: Action
+
+    include_contact:
+      page_title: Are you willing to share your contact details?
+      hint_html: |
+        <p class="govuk-body">If you choose to share your contact details with us, you can be sure that this will not be shared with the organisation you are reporting, unless you have given us consent to do so.</p>
+        <p class="govuk-body">We may also contact you about your report and ask for further details. If we use your report to open an investigation, your details will be protected by us in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in a new tab)</a>.</p>
+        <p class="govuk-body">We understand you may want to remain anonymous. You can still submit a report without sharing your contact details. If you choose to do this, we cannot discuss your report with you.</p>
+        <p class="govuk-body">If you wish to provide some contact information but remain anonymous, you can create a new email account ensuring it does not include your name or other identifying information.</p>
+        <p class="govuk-body">You can also read more about <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">how to submit this report to us anonymously (opens in a new tab)</a>.</p>    
+        <p class="govuk-body">Do you want to share your contact details?</p>
+    contact:
+      page_title: Your contact details 
+      body_html: |
+        <p class="govuk-body">You can add your details. You do not have to provide all 3 forms of contact, but will need to include an email address.</p>
+      contact_name: Full name (optional)
+      contact_email_address: Email address
+      contact_email_address_hint: We will use your email address to send confirmation of your report, and for any further contact if needed.
+      contact_telephone_number: Telephone number (optional)
+      contact_telephone_number_hint: We will use your telephone number if we need to contact you in future about your report.
+
+    review:
+      page_title: Check your answers
+      body_html: |
+        <p class="govuk-body">Select the 'Change' link next to any field to modify its contents. After you select submit you will not be able to change any further details.</p>
+      businesses: Tell us about the businesses you want to report
+      what_happened: What happened?
+      include_contact: Are you willing to give your contact details?
+      evidence: Supporting evidence
+      no_evidence_files: No evidence files uploaded
+      contact_name: Contact name
+      contact_email_address: Contact email address
+      contact_telephone_number: Contact telephone number
+      not_provided: Not provided
+      submit_button: Submit
+      submit_please_wait: Please wait...
+
+    print:
+      page_title: Submission %{refno}
+      body_html: |
+        <p class="govuk-body">To save a copy of your answers as a PDF, select print, and then "Save as PDF" from your browser options.</p>
+        <p class="govuk-body">You can also copy and paste the information you have provided below into a document or note.</p>
+      businesses: Tell us about the businesses you want to report
+      what_happened: What happened?
+      evidence: Supporting evidence
+      no_evidence_files: No evidence files uploaded
+      include_contact: Are you willing to give your contact details?
+      contact_name: Contact name
+      contact_email_address: Contact email address
+      contact_telephone_number: Contact telephone number
+      not_provided: Not provided
+
+    summary:
+      page_title: Report submitted
+      summary_html: |
+        <p class="govuk-body">Thank you for your report. It's been sent to the Competition and Markets Authority (CMA). We can't respond in detail to all individual reports.</p>
+        <p class="govuk-body">As a result of the information you provide, we may:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>contact you to ask for more details</li>
+          <li>investigate and take legal action against businesses</li>
+          <li>conduct studies or investigations into markets</li>
+          <li>prosecute people involved with cartels</li>
+        </ul>
+        <p class="govuk-body">If we decide to open a formal enforcement case, we may contact you and give you the opportunity to comment on this. This may only happen if you've provided contact details to us.</p>
+        <p class="govuk-body">If you have any further questions or concerns, please save your submission reference number given above and contact us at <a href="mailto:general.enquiries@cma.gov.uk">general.enquiries@cma.gov.uk</a>.</p>
+        <p class="govuk-body">We will not send a copy of your report to you via email. If you need to keep a copy for your records, select "View your report".</p>
+        <p class="govuk-body">To save a copy of your answers as PDF, select print and then "Save as PDF" from your browser options.</p>
+      save_a_copy: View your report
+      
+      service_html: |
+        <p class="govuk-body"><a href="%{service_review_url}">What did you think of this service?</a> (takes 30 seconds)</p>
+          

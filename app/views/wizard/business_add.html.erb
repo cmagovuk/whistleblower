@@ -1,0 +1,35 @@
+<% title(t(".page_title")) %>
+
+<div class="govuk-width-container">
+
+    <%= link_to t("link.back"), wizard_businesses_path, class: "govuk-back-link ga-pageLink" %>
+
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+            <%= form_for @business, :url => wizard_business_add_path, :method => :post  do |f| %>
+
+                <%= f.govuk_error_summary %>
+                
+                <%= f.govuk_fieldset legend: { text: t(".page_title"), size: "xl" } do %>
+                
+                    <%= f.govuk_text_field :business_name,     label: { text: t(".business_name") }, width: "two-thirds" %>
+                    <%= f.govuk_text_area  :business_address,  label: { text: t(".business_address") }, width: "two-thirds",  rows: 5 %>
+                    <%= f.govuk_text_field :business_postcode, label: { text: t(".business_postcode") }, width: "two-thirds" %>
+                    <%= f.govuk_text_field :business_url,      label: { text: t(".business_url") }, hint: {text: t(".business_url_hint")}, width: "two-thirds" %>
+                    
+                <% end %>
+
+                <%= f.govuk_submit t(".submit") do %>
+                    <a class="govuk-button govuk-button--secondary" href="<%= wizard_businesses_path %>"><%= t(".cancel") %></a>
+                <% end %>
+
+                
+
+            <% end %>
+
+            </div>
+        </div>
+    </main>
+</div>
