@@ -4,25 +4,20 @@ class WizardController < ApplicationController
 
     def start
 
-        session[:submission_id] = nil
+        redirect_to :controller => :wizard, :action => :start_submit and return
 
-        @submission = Submission.new
-        @submission.router.set_visited(:start)
-        @submission.status = :start
-        
     end
 
     def start_submit
 
         # Create the new submission
+        session[:submission_id] = nil
+
         @submission = Submission.new
         @submission.status = :start
         @submission.router.set_visited(:start)
         @submission.router.set_completed(:start)
-        @submission.save(:validate => false)
-        
-        session[:submission_id] = @submission.id
-        
+                
         redirect_to :controller => :wizard, :action => @submission.router.next_page(:start) and return
         
     end
@@ -60,6 +55,20 @@ class WizardController < ApplicationController
     end
 
     def business_add_submit
+
+        # if the submission doesn't exist yet, update it and save it
+        if session[:submission_id].nil?
+            @submission = Submission.new
+            @submission.router.set_visited(:start)
+            @submission.router.set_completed(:start)
+            @submission.router.set_visited(:businesses)
+            @submission.status = :businesses
+            @submission.save(:validate => false)
+
+            session[:submission_id] = @submission.id
+        end
+
+        # save the business
         @business = @submission.businesses.new(params.require(:business).permit(:submission_id, :business_name, :business_address, :business_postcode, :business_url))
         if @business.save
             redirect_to :controller => :wizard, :action => :businesses and return
@@ -290,7 +299,7 @@ class WizardController < ApplicationController
     end
 
     def test
-        
+        Transmitter.Transmit(@submission)
     end
 
 

@@ -31,13 +31,13 @@
 
 en:
   service: 
-    name: "CMA MWR"
+    name: "Make a whistleblower report"
     
   link:
     back: Back
 
   feedback:
-    subject: Feedback for 'CMA MWR' form
+    subject: Feedback for 'Make a whistleblower report' form
 
   cookie_banner:
     confirmation_message:

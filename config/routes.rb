@@ -69,5 +69,5 @@ Rails.application.routes.draw do
   # print
   get  "/wizard/print", to: "wizard#print", via: :all
 
-
+  
 end
