@@ -1,0 +1,27 @@
+<% title(t(".page_title")) %>
+
+
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"><%= t(".id") %></th>
+            <th scope="col" class="govuk-table__header"><%= t(".reference_number") %></th>
+            <th scope="col" class="govuk-table__header"><%= t(".created") %></th>
+            <th scope="col" class="govuk-table__header"><%= t(".status") %></th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+
+        <% @submissions.each do |s| %>
+
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><a href="./confirm?submission_id=<%= s.id %>"><%= s.id %></a></th>
+            <td class="govuk-table__cell"><%= s.reference_number %></td>
+            <td class="govuk-table__cell"><%= s.created_at %></td>
+            <td class="govuk-table__cell"><%= s.status %></td>
+        </tr>
+
+        <% end %>
+
+    </tbody>
+</table>

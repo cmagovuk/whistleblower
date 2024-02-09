@@ -312,9 +312,7 @@ private
             begin
                 # retrieve the submission
                 @submission = Submission.find(session[:submission_id])
-                
-                
-                
+
                 @requested_page = request.path.split('/').reject(&:blank?).last.to_sym
 
                 # is the page being requested in the route?

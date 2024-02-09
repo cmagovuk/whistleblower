@@ -1,0 +1,13 @@
+<% title(t(".page_title")) %>
+
+<h1 class="govuk-heading-xl"><%= t(".page_title") %></h1>
+
+<%= t(".summary_html") %>
+
+<%= form_for :resubmission, :url => resubmit_path, :method => :post  do |f| %>
+
+    <%= f.govuk_text_field :submission_id, label: { text: t(".submission_id") }, width: "two-thirds" %>
+    
+    <%= f.govuk_submit %>
+
+<% end %>

@@ -69,5 +69,29 @@ Rails.application.routes.draw do
   # print
   get  "/wizard/print", to: "wizard#print", via: :all
 
+
+  # resubmit
+  get "/resubmit", to: "resubmit#resubmit", via: :all
+  post "/resubmit", to: "resubmit#resubmit_submit", via: :all
+
+  # login
+  get "/resubmit/login", to: "resubmit#login", via: :all
+  post "/resubmit/login", to: "resubmit#login_submit", via: :all
+
+  # login_failed
+  get "/resubmit/login_failed", to: "resubmit#login_failed", via: :all
+
+  # confirm
+  get "/resubmit/confirm", to: "resubmit#confirm", via: :all
+  post "/resubmit/confirm", to: "resubmit#confirm_submit", via: :all
+
+  # resubmitted
+  get "/resubmit/resubmitted", to: "resubmit#resubmitted", via: :all
   
+  # not found
+  get "/resubmit/not_found", to: "resubmit#not_found", via: :all
+
+  # list
+  get "/resubmit/list", to: "resubmit#list", via: :all
+
 end

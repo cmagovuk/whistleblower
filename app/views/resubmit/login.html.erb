@@ -1,0 +1,11 @@
+<h1 class="govuk-heading-xl"><%= t(".page_title") %></h1>
+
+<%= t(".summary_html") %>
+
+<%= form_for :login, :url => resubmit_login_path, :method => :post  do |f| %>
+
+    <%= f.govuk_text_field :access_code, label: { text: t(".access_code") }, width: "two-thirds" %>
+    
+    <%= f.govuk_submit t(".login") %>
+
+<% end %>

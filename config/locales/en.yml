@@ -212,4 +212,51 @@ en:
       
       service_html: |
         <p class="govuk-body"><a href="%{service_review_url}">What did you think of this service?</a> (takes 30 seconds)</p>
-          
+  resubmit:
+    resubmit:
+      page_title: Resubmit Submission
+      summary_html: |
+        <p class="govuk-body">Enter the internal ID of the submission in the form below, and click the button below.</p>
+      submission_id: Submission ID
+      submit_button: Lookup submission
+    login:
+      page_title: Login
+      summary_html: |
+        <p class="govuk-body">Enter the access code into the form below.</p>
+      access_code: Access code
+      login: Login
+    login_failed:
+      page_title: Login failed
+      summary_html: |
+        <p class="govuk-body">Your access code was incorrect.</p>
+    confirm:
+      page_title: Confirm Resubmission
+      summary_html: |
+        <p class="govuk-body">Please review the submission details below - if correct, click the Resubmit button.</p>
+      businesses: Tell us about the businesses you want to report
+      what_happened: What happened?
+      evidence: Supporting evidence
+      no_evidence_files: No evidence files uploaded
+      include_contact: Are you willing to give your contact details?
+      contact_name: Contact name
+      contact_email_address: Contact email address
+      contact_telephone_number: Contact telephone number
+      not_provided: Not provided
+      resubmit_button: Resubmit Submission
+      resubmit_please_wait: Please wait...
+    not_found:
+      page_title: Submission not found
+      summary_html: |
+        <p class="govuk-body">The submission specified was not found.</p>
+    resubmitted:
+      page_title: Submission Resubmitted
+      summary_html: |
+        <p class="govuk-body">The submission has been resubmitted.</p>
+        <p class="govuk-body"><a href="./list">Return to list</a>.</p>
+    list:
+      page_title: Submissions List
+      id: ID
+      reference_number: Reference Number
+      created: Created
+      status: Status
+    
