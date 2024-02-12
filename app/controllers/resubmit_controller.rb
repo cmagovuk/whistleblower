@@ -48,14 +48,14 @@ class ResubmitController < ApplicationController
 
     def confirm_submit
         # actions the resubmission
-        begin
+        #begin
             @submission = Submission.find(params[:resubmission][:submission_id])
             puts(params)
             Transmitter.Transmit(@submission)
             redirect_to :controller => :resubmit, :action => :resubmitted
-        rescue
-            redirect_to :controller => :resubmit, :action => :not_found
-        end
+        #rescue
+        #    redirect_to :controller => :resubmit, :action => :not_found
+        #end
     end
 
     def resubmitted
@@ -64,7 +64,7 @@ class ResubmitController < ApplicationController
 
     def list
 
-        @submissions = Submission.order(:created_at).last(100)
+        @submissions = Submission.where.not(:reference_number => nil).order(:created_at).last(100)
 
     end
 

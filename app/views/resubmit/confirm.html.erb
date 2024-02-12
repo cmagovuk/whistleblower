@@ -1,6 +1,6 @@
 <% title(t(".page_title")) %>
 
-<h1 class="govuk-heading-xl"><%= t(".submission_found") %></h1>
+<h1 class="govuk-heading-xl"><%= t(".page_title") %></h1>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
@@ -89,6 +89,8 @@
 <%= form_for :resubmission, :url => resubmit_confirm_path, :method => :post  do |f| %>
 
     <%= f.hidden_field :submission_id, :value => @submission.id %>
-    <%= f.govuk_submit t(".resubmit_button") , data: { disable_with: t(".resubmit_please_wait") }%>
+    <%= f.govuk_submit t(".resubmit_button") , data: { disable_with: t(".resubmit_please_wait") } do %>
+        <a class="govuk-button govuk-button--secondary" href="./list"><%= t(".cancel") %></a>
+    <% end %>
 
 <% end %>

@@ -244,6 +244,7 @@ en:
       not_provided: Not provided
       resubmit_button: Resubmit Submission
       resubmit_please_wait: Please wait...
+      cancel: Cancel
     not_found:
       page_title: Submission not found
       summary_html: |
@@ -255,6 +256,10 @@ en:
         <p class="govuk-body"><a href="./list">Return to list</a>.</p>
     list:
       page_title: Submissions List
+      summary_html: |
+        <p class="govuk-body">The list below shows the last 100 submissions that exist with reference numbers, latest first. Reference numbers are assigned at point of submission.</p>
+        <p class="govuk-body">Before resubmitting a submission, first check that it doesn't already exist within Microsoft SharePoint. To resubmit, click on it's reference number to confirm it's details, then click the resubmit button at the bottom of the page.</p>
+        <p class="govuk-body">Note - resubmission will NOT trigger a notification email to the author of the submission.</p>
       id: ID
       reference_number: Reference Number
       created: Created
