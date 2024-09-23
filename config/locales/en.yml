@@ -264,4 +264,53 @@ en:
       reference_number: Reference Number
       created: Created
       status: Status
+  reports:
+    login:
+      page_title: "Login"
+      password: Password
+      security_message: Don't tell anyone your password
+      guidance_html: |
+        <p class="govuk-body">Access to the reporting facility within the CMA Whistleblower interface is password protected.</p>
+      submit: Submit
+      login_error_summary_html: |
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+              <h2 class="govuk-error-summary__title">
+              There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                      <a href="#login-reports-password-field">The password you entered was incorrect.</a>
+                  </li>
+              </ul>
+              </div>
+          </div>
+        </div>
+      login_error_html: |
+        <p id="#reports-password-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> The password you entered was incorrect.
+        </p>
+    menu:
+      page_title: "Reports"
+      guidance_html: |
+        <p class="govuk-body">Chooose the report you wish to see from the list below:</p>
+      report_summary: Summary of submissions
+      logout: Logout
+    report_summary:
+      page_title: Summary of submissions
+      guidance_html: |
+        <p class="govuk-body">The table below shows a summary of submissions covering the last 12 months.</p>
+      businesses: Businesses
+      what_happened: What happened?
+      evidence: Evidence
+      include_contact: Include contact?
+      contact: Contact information
+      review: Check your answers
+      summary: Summary
+      total: Total
+      month: Month
+    _breadcrumbs:
+      reports: Reports
+      
     

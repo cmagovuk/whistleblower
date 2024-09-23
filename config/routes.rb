@@ -94,4 +94,12 @@ Rails.application.routes.draw do
   # list
   get "/resubmit/list", to: "resubmit#list", via: :all
 
+  # reports
+  get "/reports", to: "reports#home", via: :all
+  get "/reports/login", to: "reports#login", via: :all
+  post "/reports/login", to: "reports#login_submit", via: :all
+  get "/reports/logout", to: "reports#logout", via: :all
+  get "/reports/menu", to: "reports#menu", via: :all
+  get "/reports/report_summary", to: "reports#report_summary", via: :all
+
 end

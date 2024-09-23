@@ -1,0 +1,50 @@
+<a href="/reports" class="govuk-back-link"><%= t(".back") %></a>
+
+<h1 class="govuk-heading-xl"><%= t(".page_title") %></h1>
+
+<%= t(".guidance_html") %>
+
+<%
+statuses = ["businesses","what_happened","evidence","include_contact","contact","review","summary"]
+%>
+
+<table class="govuk-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"><%= t(".month") %></th>
+            <% statuses.each do |s| %>
+                <th scope="col" class="govuk-table__header"><%= t("." + s) %></th>
+            <% end %>
+            <th scope="col" class="govuk-table__header"><%= t(".total") %></th>
+        </tr>
+    </thead>
+    <tbody>
+<%
+# first get the last 12 months
+working_month = Time.now
+12.times do
+    start_date = working_month.at_beginning_of_month
+    end_date = working_month.at_end_of_month
+    status_totals = Submission.where("created_at > '" + start_date.strftime("%Y-%m-%d") + "' AND created_at < '" + end_date.strftime("%Y-%m-%d") + "'").group(:status).count
+    %>
+        <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"><%= start_date.strftime("%B %Y") %></th>
+            <%
+            total = 0
+            statuses.each do |s|
+            %>
+                <td class="govuk-table__cell"><%= status_totals[s].present? ? status_totals[s] : "0" %></td>
+            <%
+                total += status_totals[s] if status_totals[s].present?
+            end
+            %>
+            <th scope="row" class="govuk-table__header"><%= total %></th>
+        </tr>
+
+    <%
+    working_month = working_month.prev_month(1)
+end
+
+%>
+</tbody>
+</table>

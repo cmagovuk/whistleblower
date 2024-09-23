@@ -65,6 +65,7 @@ class ResubmitController < ApplicationController
     def list
 
         @submissions = Submission.where.not(:reference_number => nil).order(:created_at).last(100)
+        
 
     end
 
