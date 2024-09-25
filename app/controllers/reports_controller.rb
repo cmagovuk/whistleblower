@@ -34,4 +34,8 @@ class ReportsController < ApplicationController
         redirect_to "/reports/login" unless (session[:reports_login].present? && session[:reports_login] == request.remote_ip)
     end
 
+    def report_summary_percent
+        redirect_to "/reports/login" unless (session[:reports_login].present? && session[:reports_login] == request.remote_ip)
+    end
+
 end

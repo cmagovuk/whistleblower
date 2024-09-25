@@ -296,11 +296,16 @@ en:
       guidance_html: |
         <p class="govuk-body">Chooose the report you wish to see from the list below:</p>
       report_summary: Summary of submissions
+      report_summary_percent: Summary of submissions (with percentages)
       logout: Logout
     report_summary:
       page_title: Summary of submissions
       guidance_html: |
-        <p class="govuk-body">The table below shows a summary of submissions covering the last 12 months.</p>
+        <p class="govuk-body">The table below shows a summary of submissions covering the last 12 months based on submission creation dates.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Each status reflects the number of submissions that went no further than that status.</li>
+          <li>The 'Summary' column reflects completed submissions (the summary page shows reference numbers).</li>
+        </ul>
       businesses: Businesses
       what_happened: What happened?
       evidence: Evidence
@@ -310,6 +315,25 @@ en:
       summary: Summary
       total: Total
       month: Month
+    report_summary_percent:
+      page_title: Summary of submissions with percentages
+      guidance_html: |
+        <p class="govuk-body">The table below shows a summary of submissions covering the last 12 months based on submission creation dates.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Each total column reflects the number of submissions that went no further than each status.</li>
+          <li>Each percentage column reflects the percentage each total is of the overall number of submissions.</li>
+          <li>The 'Summary' column reflects completed submissions (the summary page shows reference numbers).</li>
+        </ul>
+      businesses: Businesses
+      what_happened: What happened?
+      evidence: Evidence
+      include_contact: Include contact?
+      contact: Contact information
+      review: Check your answers
+      summary: Summary
+      total: Total
+      month: Month
+      percent: Percent
     _breadcrumbs:
       reports: Reports
       

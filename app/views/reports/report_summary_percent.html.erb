@@ -11,9 +11,17 @@ statuses = ["businesses","what_happened","evidence","include_contact","contact",
 <table class="govuk-table">
     <thead class="govuk-table__head">
         <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header"></th>
+            <% statuses.each do |s| %>
+                <th colspan="2" scope="col" class="govuk-table__header"><%= t("." + s) %></th>
+            <% end %>
+            <th scope="col" class="govuk-table__header"></th>
+        </tr>
+        <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header"><%= t(".month") %></th>
             <% statuses.each do |s| %>
-                <th scope="col" class="govuk-table__header"><%= t("." + s) %></th>
+                <th scope="col" class="govuk-table__header"><%= t(".total") %></th>
+                <th scope="col" class="govuk-table__header"><%= t(".percent") %></th>
             <% end %>
             <th scope="col" class="govuk-table__header"><%= t(".total") %></th>
         </tr>
@@ -41,6 +49,18 @@ working_month = Time.now
         end
     end
 
+    # initialise a percentages hash
+    status_percentages = {}
+
+    # calculate percentages
+    statuses.each do |s|
+        if status_totals[s] > 0
+            status_percentages[s] = (status_totals[s].to_f / month_total.to_f) * 100
+        else
+            status_percentages[s] = 0.to_f
+        end
+    end
+
     %>
         <tr class="govuk-table__row">
             <th scope="row" class="govuk-table__header"><%= start_date.strftime("%B %Y") %></th>
@@ -48,6 +68,7 @@ working_month = Time.now
             statuses.each do |s|
                 %>
                 <td class="govuk-table__cell"><%= status_totals[s] %></td>
+                <td class="govuk-table__cell"><%= status_percentages[s].round(1).to_s %>%</td>
                 <%
             end
             %>

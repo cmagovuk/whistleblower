@@ -101,5 +101,6 @@ Rails.application.routes.draw do
   get "/reports/logout", to: "reports#logout", via: :all
   get "/reports/menu", to: "reports#menu", via: :all
   get "/reports/report_summary", to: "reports#report_summary", via: :all
+  get "/reports/report_summary_percent", to: "reports#report_summary_percent", via: :all
 
 end
