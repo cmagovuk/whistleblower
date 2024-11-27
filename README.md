@@ -1,46 +1,28 @@
-# CMA Whistleblower Web Application
+# CMA RFI Management Interface
 
-## Development Environment
+This project is under development at the moment - the source code reflects the "in-progress" state of the code-base.
 
-Development was carried out in a Hyper-V virtual machine built via the Quick Create Action, Ubuntu 20.04 Operating System.
 
-## Prerequisites
+### Bootstrapping the system in the development environment
 
-- Ruby 2.7.4
-- PostgreSQL
-- NodeJs 14.x
-- Yarn 1.22.x
-- Docker
+If you are in a development environment, you will need to bootstrap the system.
 
-## Setting up the app in development
+1. Create an environment variable called "DEV_EMAIL_ADDRESS" with an email address in it.
+2. Run the following SQL in the dev application database (change the email address as required):
 
-1. Run `bundle install` to install the gem dependencies
-2. Run `yarn` to install node dependencies
-3. Run `bin/rails db:setup` to set up the database development and test schemas, and seed with test data
-4. Run `bundle exec rails server` to launch the app on http://localhost:3000
-5. Run `./bin/webpack-dev-server` in a separate shell for faster compilation of assets
+```
+INSERT INTO users
+	(name,email_address,status,superuser,created_at,updated_at)
+	VALUES ('Developer','dev@domain.com','active',true,CURRENT_DATE, CURRENT_DATE);
 
-## Frameworks used
+UPDATE users
+	SET created_by_id=(SELECT id FROM users WHERE email_address='dev@domain.com'),
+	updated_by_id=(SELECT id FROM users WHERE email_address='dev@domain.com')
+```
 
-- The development is based on the [DFE Rails Template](https://github.com/DFE-DDigital/rails-template), which includes the GOV UK Design System Form Builder
+If you now run the rails web application in a session that has the environment variable, you should be able to access the administration interface.
 
-## Environment variables
+### Notes for upgrading versions from before RBAC and templates was introduced
 
-The application requires the following environment variables to be configured
+After launching the admin interface with su privileges, go to the system section, and "populate" the database. It will create system records, and back-populate fields as appropriate throughout the system as needed.
 
-| Name | Purpose |
-| --- | --- |
-| DB_HOST | Database URL
-| DB_DATABASE | Database name
-| DB_USERNAME | Database username
-| DB_PASSWORD | Database password
-| STORAGE_ACCOUNT_NAME | Azure Storage account name
-| STORAGE_ACCESS_KEY | Azure Storage access key
-| STORAGE_CONTAINER | Azure Storage container name
-| GOVUK_NOTIFY_API_KEY | GOV UK Notification Service API Key
-| SERVICE_REVIEW_URL | URL of feedback form
-| MWR_TRANSMIT_API | URL of service API
-
-## Licence
-
-[MIT License](LICENCE)
