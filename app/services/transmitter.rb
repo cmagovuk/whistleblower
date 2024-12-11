@@ -26,6 +26,7 @@ class Transmitter
         submission: {
           id: submission.id,
           reference_number: submission.reference_number,
+          work_for_the_business: submission.work_for_the_business,
           businesses: businesses,
           what_happened: submission.what_happened,
           evidence: evidence_files,

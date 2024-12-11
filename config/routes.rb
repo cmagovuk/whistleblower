@@ -22,6 +22,10 @@ Rails.application.routes.draw do
   get  "/wizard/start", to: "wizard#start", via: :all
   get "/wizard/start_submit", to: "wizard#start_submit", via: :all
 
+  # work_for_the_business page
+  get "/wizard/work_for_the_business", to: "wizard#work_for_the_business", via: :all
+  post "/wizard/work_for_the_business", to: "wizard#work_for_the_business_submit", via: :all
+
   # businesses page
   get  "/wizard/businesses", to: "wizard#businesses", via: :all
   post "/wizard/businesses", to: "wizard#businesses_submit", via: :all
@@ -68,6 +72,9 @@ Rails.application.routes.draw do
 
   # print
   get  "/wizard/print", to: "wizard#print", via: :all
+
+  # not eligible
+  get "/wizard/not_eligible", to: "wizard#not_eligible", via: :all
 
 
   # resubmit

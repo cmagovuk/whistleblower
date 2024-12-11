@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 2021_07_27_094637) do
   create_table "submissions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "reference_number"
     t.integer "reference_index"
+    t.string "work_for_the_business"
     t.text "what_happened"
     t.string "include_contact"
     t.string "contact_name"

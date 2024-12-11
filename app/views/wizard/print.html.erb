@@ -6,6 +6,15 @@
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
     <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key"><%= t(".work_for_the_business") %></dt>
+        <dd class="govuk-summary-list__value">
+            <%= t("." + @submission.work_for_the_business) %>
+        </dd>
+    </div>
+</dl>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+    <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key"><%= t(".businesses") %></dt>
         <dd class="govuk-summary-list__value">
             <% @submission.businesses.each do |b| %>    

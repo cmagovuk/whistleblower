@@ -22,6 +22,57 @@ class WizardController < ApplicationController
         
     end
 
+    def work_for_the_business
+
+        # record arrival at page
+        @submission.router.set_visited(:work_for_the_business)
+        @submission.status = :work_for_the_business
+        @submission.save(:validate => false)
+
+    end
+
+    def work_for_the_business_submit
+
+        puts @submission.inspect
+
+        # if the submission doesn't exist yet, update it and save it
+        if session[:submission_id].nil?
+
+            @submission = Submission.new
+            @submission.router.set_visited(:start)
+            @submission.router.set_completed(:start)
+            @submission.router.set_visited(:work_for_the_business)
+            @submission.status = :work_for_the_business
+            @submission.save(:validate => false)
+
+            session[:submission_id] = @submission.id
+        end
+
+        if @submission.update(params.require(:submission).permit(:work_for_the_business))
+
+            # record submit happened
+            @submission.router.set_completed(:work_for_the_business)
+            @submission.status = :work_for_the_business
+            @submission.save(:validate => false)
+
+            # depending on yes or no, go to next page or not_eligible page
+            if @submission.work_for_the_business == "yes"
+                redirect_to :controller => :wizard, :action => @submission.router.next_page(:work_for_the_business) and return
+            else
+                redirect_to :controller => :wizard, :action => :not_eligible and return
+            end
+
+        else
+            render :work_for_the_business and return
+        end
+
+    end
+
+
+
+
+
+
     def businesses
 
         # record arrival at page
@@ -56,18 +107,6 @@ class WizardController < ApplicationController
 
     def business_add_submit
 
-        # if the submission doesn't exist yet, update it and save it
-        if session[:submission_id].nil?
-            @submission = Submission.new
-            @submission.router.set_visited(:start)
-            @submission.router.set_completed(:start)
-            @submission.router.set_visited(:businesses)
-            @submission.status = :businesses
-            @submission.save(:validate => false)
-
-            session[:submission_id] = @submission.id
-        end
-
         # save the business
         @business = @submission.businesses.new(params.require(:business).permit(:submission_id, :business_name, :business_address, :business_postcode, :business_url))
         if @business.save
@@ -98,6 +137,9 @@ class WizardController < ApplicationController
         redirect_to :controller => :wizard, :action => :businesses, :method => 'GET' and return
     end
 
+
+
+
     def what_happened
         # record arrival at page
         @submission.router.set_visited(:what_happened)
@@ -121,6 +163,8 @@ class WizardController < ApplicationController
         end
 
     end
+
+
 
     def evidence
         # record arrival at page
@@ -296,6 +340,10 @@ class WizardController < ApplicationController
 
     def print
         
+    end
+
+    def not_eligible
+
     end
 
     def test

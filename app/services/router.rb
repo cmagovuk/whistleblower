@@ -18,7 +18,7 @@ class Router
     @current_page = nil
 
     def initialize
-        @steps = [Step.new(:start),Step.new(:businesses), Step.new(:what_happened), Step.new(:evidence), Step.new(:include_contact), Step.new(:contact), Step.new(:review), Step.new(:summary)]
+        @steps = [Step.new(:start),Step.new(:work_for_the_business), Step.new(:businesses), Step.new(:what_happened), Step.new(:evidence), Step.new(:include_contact), Step.new(:contact), Step.new(:review), Step.new(:summary)]
     end
 
     def steps

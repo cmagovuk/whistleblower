@@ -44,17 +44,22 @@ en:
     subject: Feedback for 'Make a whistleblower report' form
 
   cookie_banner:
+
     confirmation_message:
       true: You've accepted analytics cookies.
       false: You've rejected analytics cookies.
+
   layouts:
+
     application:
       phase_text_html: This is a new service - your %{feedback_link} will help us to improve it.
       cookies: Cookies
       accessibility_link: Accessibility statement
 
   wizard:
+
     start:
+
       page_title: Make a whistleblower report
       body_html: |
         <h2 class="govuk-heading-m">What you can report</h2>
@@ -76,6 +81,54 @@ en:
           <li>supporting evidence, for example: emails, screenshots or documents</li>
         </ul>
       start_now: Start now
+
+    work_for_the_business:
+      page_title: Do you work for the business you'd like to report?
+      hint_html: |
+        <p class="govuk-body">You can use this service to report a business:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>you work at currently</li>
+          <li>you have worked at in the past</li>
+        </ul>
+        <p class="govuk-body">You're a worker if you have a contract. <a href="https://www.gov.uk/employment-contracts-and-conditions" target="_blank">Find out more about employment contracts (opens in a new tab)</a>.</p>
+        <p class="govuk-body"><a href="https://www.gov.uk/employment-status#content" target="_blank">If you're not sure, check your employment status (opens in a new tab)</a>.</p>
+        <h2 class="govuk-heading-m">What you can report</h2>
+        <p class="govuk-body">You can report a business if you think it has:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>broken competition law</li>
+          <li>used unfair trading practices</li>
+        </ul>
+        <p class="govuk-body">You can report any of the following concerns:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>a criminal offence, for example fraud</li>
+          <li>someone's health and safety is in danger</li>
+          <li>a miscarriage of justice</li>
+          <li>the company is breaking the law, for example does not have the right insurance</li>
+          <li>you believe someone is covering up wrongdoing</li>
+        </ul>
+        <h2 class="govuk-heading-m">When to make a report</h2>
+        <p class="govuk-body">You can make a report:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>about something that is happening now</li>
+          <li>about something that happened in the past</li>
+        </ul>
+        <p class="govuk-body">Do you work for the business you'd like to report, or have you in the past?</p>
+
+    not_eligible:
+      page_title: You are not eligible to use this service
+      body_html: |
+        <p class="govuk-body">This form is for people who want to make a whistleblowing report to the <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority" target="_blank">Competition and Markets Authority (CMA) (opens in a new tab)</a>.</p>
+        <h2 class="govuk-heading-m">How to contact the CMA to report other concerns</h2>
+        <p class="govuk-body">If you are not making a whistleblowing report, but want to contact the CMA about something else, you can:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="https://www.gov.uk/guidance/contact-the-cma" target="_blank">contact our General Enquiries team (opens in a new tab)</a></li>
+          <li><a href="https://www.gov.uk/guidance/tell-the-cma-about-a-competition-or-market-problem" target="_blank">tell us about issues with a business or market, or provide information about a new or existing case (opens in a new tab)</a></li>
+          <li><a href="https://www.gov.uk/cartels-price-fixing/report-anticompetitive-activity" target="_blank">report suspected cartel activity (opens in a new tab)</a></li>
+        </ul>
+        <h2 class="govuk-heading-m">Other organisations you can contact</h2>
+        <p class="govuk-body">The CMA is one of many organisations that can receive whistleblowing reports.</p>
+        <p class="govuk-body">If an organisation can receive a whistleblowing report, it is called a prescribed person or body.</p>
+        <p class="govuk-body"><a href="https://www.gov.uk/government/publications/blowing-the-whistle-list-of-prescribed-people-and-bodies--2" target="_blank">Check the list of prescribed people and bodies (opens in a new tab)</a>.</p>
 
     businesses:
       page_title: Tell us about the businesses you want to report
@@ -118,13 +171,14 @@ en:
           <li>different businesses working together to set prices or practices</li>
         </ul>
         <p class="govuk-body">Try to start from the beginning and include as much information as possible.</p>
+        <p class="govuk-body">You can upload evidence in the next step.</p>
         <p class="govuk-body">This can include conversations, emails, shared and group discussions that may not have felt right. Provide dates and any other information that would help us understand what you are reporting.</p>
         <p class="govuk-body">Do not include personal or financial information, for example: credit card details, medical history or information about children or vulnerable people.</p>
-        <p class="govuk-body">You can upload evidence in the next step.</p>
 
     evidence:
       page_title: Supporting evidence
       hint_html: |
+        <p class="govuk-body">You do not need to submit evidence to report something to us, however it may help us look into your report.</p>
         <p class="govuk-body">You can add up to 5 files of supporting evidence to your report. Most file types are supported (for example, PDF, DOC, Excel, JPG, PNG) and can be up to 10MB each.</p>
         <p class="govuk-body">You can upload any evidence that supports your report. For example:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -137,8 +191,8 @@ en:
           <li>any evidence that supports your submission</li>
         </ul>
         <p class="govuk-body">You will not be able to submit any further supporting evidence later. If you have more than 5 files to submit, you can email them to <a href="mailto:email@cma.gov.uk">email@cma.gov.uk</a>.</p>
-        <p class="govuk-body">We carefully protect and handle all evidence in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a> (also known as a privacy notice).</p>        
-        <p class="govuk-body">You do not need to submit evidence to report something to us.</p>
+        <p class="govuk-body">Any evidence you choose to share with us is handled with discretion. We carefully protect and handle all evidence in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a> (also known as a privacy notice).</p>
+        
       filename: Filename
       filesize: File size
       action: Action
@@ -146,11 +200,16 @@ en:
     include_contact:
       page_title: Are you willing to share your contact details?
       hint_html: |
-        <p class="govuk-body">If you choose to share your contact details with us, you can be sure that this will not be shared with the organisation you are reporting, unless you have given us consent to do so.</p>
-        <p class="govuk-body">We may also contact you about your report and ask for further details. If we use your report to open an investigation, your details will be protected by us in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in a new tab)</a>.</p>
-        <p class="govuk-body">We understand you may want to remain anonymous. You can still submit a report without sharing your contact details. If you choose to do this, we cannot discuss your report with you.</p>
-        <p class="govuk-body">If you wish to provide some contact information but remain anonymous, you can create a new email account ensuring it does not include your name or other identifying information.</p>
-        <p class="govuk-body">You can also read more about <a href="https://www.gov.uk/government/publications/whistleblowers-at-the-cma" target="_blank">how to submit this report to us anonymously (opens in a new tab)</a>.</p>    
+        <h2 class="govuk-heading-m">If you do share contact details</h2>
+        <p class="govuk-body">If you share your contact details, we may contact you about your report and ask for more information. If we use your report to open an investigation, your details will be protected by us in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in a new tab)</a>.</p>
+        <p class="govuk-body">Your contact details will not be shared with the organisation you are reporting, unless you have given us consent to do so.</p>
+        <h2 class="govuk-heading-m">If you don't share contact details</h2>
+        <p class="govuk-body">If you don't share your contact details, we will not be able to discuss your concerns with you. We also may not be able to take action relating to your concerns.</p>
+        <p class="govuk-body">We will still do our best to investigate if we think competition or consumer law has been infringed.</p>
+        <h2 class="govuk-heading-m">How to report anonumously</h2>
+        <p class="govuk-body">All submissions can be made anonymously.</p>
+        <p class="govuk-body">We understand you may want to remain anonymous. You can still submit a report without sharing your contact details. If you choose to do this, we cannot discuss your report with you.<p>
+        <p class="govuk-body">To provide some contact information and remain anonymous, you could use an email address that does not reveal any personal information, or withold your caller ID.</p>
         <p class="govuk-body">Do you want to share your contact details?</p>
     contact:
       page_title: Your contact details 
@@ -166,6 +225,7 @@ en:
       page_title: Check your answers
       body_html: |
         <p class="govuk-body">Select the 'Change' link next to any field to modify its contents. After you select submit you will not be able to change any further details.</p>
+      work_for_the_business: Do you work for the business you'd like to report?
       businesses: Tell us about the businesses you want to report
       what_happened: What happened?
       include_contact: Are you willing to give your contact details?
@@ -183,6 +243,7 @@ en:
       body_html: |
         <p class="govuk-body">To save a copy of your answers as a PDF, select print, and then "Save as PDF" from your browser options.</p>
         <p class="govuk-body">You can also copy and paste the information you have provided below into a document or note.</p>
+      work_for_the_business: Do you work for the business you'd like to report?
       businesses: Tell us about the businesses you want to report
       what_happened: What happened?
       evidence: Supporting evidence
@@ -195,8 +256,13 @@ en:
 
     summary:
       page_title: Report submitted
+      your_reference_number: Your reference number
       summary_html: |
-        <p class="govuk-body">Thank you for your report. It's been sent to the Competition and Markets Authority (CMA). We can't respond in detail to all individual reports.</p>
+        <p class="govuk-body">Thank you for your report. It's been sent to the Competition and Markets Authority (CMA). We can't respond in detail to all individual reports. If you provided an email address, we have sent a confirmation email.</p>
+        <h2 class="govuk-heading-m">How to view your report</h2>
+        <p class="govuk-body">We will not send a copy of your report to you. If you need to keep a copy, select "View your report".</p>
+        <p class="govuk-body">To save a copy of your answers as PDF, select "Print" and then "Save as PDF" from your browser options.</p>
+        <h2 class="govuk-heading-m">What happens next</h2>
         <p class="govuk-body">As a result of the information you provide, we may:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>contact you to ask for more details</li>
@@ -206,7 +272,7 @@ en:
         </ul>
         <p class="govuk-body">If we decide to open a formal enforcement case, we may contact you and give you the opportunity to comment on this. This may only happen if you've provided contact details to us.</p>
         <p class="govuk-body">If you have any further questions or concerns, please save your submission reference number given above and contact us at <a href="mailto:general.enquiries@cma.gov.uk">general.enquiries@cma.gov.uk</a>.</p>
-        <p class="govuk-body">We will not send a copy of your report to you via email. If you need to keep a copy for your records, select "View your report".</p>
+        <p class="govuk-body">We will not send a copy of your report to you via email. If you need to keep a copy for your records, select <a href="/wizard/print" target="_blank">View your report</a>.</p>
         <p class="govuk-body">To save a copy of your answers as PDF, select print and then "Save as PDF" from your browser options.</p>
       save_a_copy: View your report
       

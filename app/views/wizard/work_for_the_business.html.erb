@@ -1,0 +1,27 @@
+<% title(t(".page_title")) %>
+
+<div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+
+                <%= form_for @submission, url: wizard_work_for_the_business_path, method: :post do |f| %>
+                        
+                <%
+                options = [
+                    OpenStruct.new(id: "yes", name: "Yes"),
+                    OpenStruct.new(id: "no", name: "No"),
+                ]
+                %>
+
+                <%= f.govuk_collection_radio_buttons :work_for_the_business, options, :id, :name, legend: { text: t(".page_title"), size: "xl" }, hint: { text: t(".hint_html") } %>
+
+                <%= f.govuk_submit %>
+                    
+                <% end %>
+
+            </div>
+        </div>
+    </main>
+</div>
