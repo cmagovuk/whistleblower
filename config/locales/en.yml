@@ -55,6 +55,63 @@ en:
       phase_text_html: This is a new service - your %{feedback_link} will help us to improve it.
       cookies: Cookies
       accessibility_link: Accessibility statement
+      performance_link: Service performance
+
+  pages:
+    performance:
+      page_title: Service Performance
+      performance_html: |
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">Cost per transaction</h2>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">£100</h2>
+              </div>
+            </div>
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">User satisfaction</h2>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">95%</h2>
+              </div>
+            </div>
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">Completion rate</h2>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">80%</h2>
+              </div>
+            </div>
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">Digital take-up</h2>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <h2 class="govuk-heading-m">80%</h2>
+              </div>
+            </div>
+            <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          
+          </div>
+        </div>
+        
 
   wizard:
 
@@ -190,7 +247,7 @@ en:
           <li>screenshots</li>
           <li>any evidence that supports your submission</li>
         </ul>
-        <p class="govuk-body">You will not be able to submit any further supporting evidence later. If you have more than 5 files to submit, you can email them to <a href="mailto:email@cma.gov.uk">email@cma.gov.uk</a>.</p>
+        <p class="govuk-body">You will not be able to submit any further supporting evidence later. If you have more than 5 files to submit, you can email them to <a href="mailto:whistleblower@cma.gov.uk">whistleblower@cma.gov.uk</a>.</p>
         <p class="govuk-body">Any evidence you choose to share with us is handled with discretion. We carefully protect and handle all evidence in line with our <a href="https://www.gov.uk/government/organisations/competition-and-markets-authority/about/personal-information-charter" target="_blank">personal information charter (opens in new tab)</a> (also known as a privacy notice).</p>
         
       filename: Filename
@@ -260,20 +317,19 @@ en:
       summary_html: |
         <p class="govuk-body">Thank you for your report. It's been sent to the Competition and Markets Authority (CMA). We can't respond in detail to all individual reports. If you provided an email address, we have sent a confirmation email.</p>
         <h2 class="govuk-heading-m">How to view your report</h2>
-        <p class="govuk-body">We will not send a copy of your report to you. If you need to keep a copy, select "View your report".</p>
+        <p class="govuk-body">We will not send a copy of your report to you. If you need to keep a copy, select "<a href="/wizard/print" target="_blank">View your report</a>".</p>
         <p class="govuk-body">To save a copy of your answers as PDF, select "Print" and then "Save as PDF" from your browser options.</p>
         <h2 class="govuk-heading-m">What happens next</h2>
-        <p class="govuk-body">As a result of the information you provide, we may:</p>
+        <p class="govuk-body">As a result of the information you provided, we may:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>contact you to ask for more details</li>
           <li>investigate and take legal action against businesses</li>
           <li>conduct studies or investigations into markets</li>
           <li>prosecute people involved with cartels</li>
         </ul>
-        <p class="govuk-body">If we decide to open a formal enforcement case, we may contact you and give you the opportunity to comment on this. This may only happen if you've provided contact details to us.</p>
-        <p class="govuk-body">If you have any further questions or concerns, please save your submission reference number given above and contact us at <a href="mailto:general.enquiries@cma.gov.uk">general.enquiries@cma.gov.uk</a>.</p>
-        <p class="govuk-body">We will not send a copy of your report to you via email. If you need to keep a copy for your records, select <a href="/wizard/print" target="_blank">View your report</a>.</p>
-        <p class="govuk-body">To save a copy of your answers as PDF, select print and then "Save as PDF" from your browser options.</p>
+        <p class="govuk-body">If we decide to open a formal enforcement case, we may contact you. This may only happen if you've provided contact details to us.</p>
+        <h2 class="govuk-heading-m">How to contact the CMA</h2>
+        <p class="govuk-body">If you have any further questions or concerns, please save your submission reference number (given above) and contact us at <a href="mailto:general.enquiries@cma.gov.uk">general.enquiries@cma.gov.uk</a>.</p>
       save_a_copy: View your report
       
       service_html: |

@@ -110,4 +110,5 @@ Rails.application.routes.draw do
   get "/reports/report_summary", to: "reports#report_summary", via: :all
   get "/reports/report_summary_percent", to: "reports#report_summary_percent", via: :all
 
+  get "/performance", to: "pages#performance", via: :all
 end
